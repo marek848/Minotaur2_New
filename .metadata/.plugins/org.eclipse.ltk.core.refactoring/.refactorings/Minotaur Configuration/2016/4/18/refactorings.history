@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Minotaur Configuration/Application/Fun/low_level&apos; to &apos;lowLevel.c&apos;" description="Rename resource &apos;low_level&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Application/Fun/low_level" name="lowLevel.c" stamp="1461762242325" updateReferences="true"/>
+</session>
