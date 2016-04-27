@@ -22,6 +22,6 @@ void adcInit()
 void uartInit()
 {
 	HAL_UART_MspInit(&huart3);
-//	HAL_UART_Receive_DMA(&huart3,(uint8*)RxBuffer,1);
+	HAL_UART_Receive_DMA(&huart3,(uint8*)RxBuffer,)
 
 }

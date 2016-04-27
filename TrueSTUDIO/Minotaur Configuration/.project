@@ -84,12 +84,12 @@
 		<link>
 			<name>Inc</name>
 			<type>2</type>
-			<location>E:/Minotaur2_New/Inc</location>
+			<locationURI>PARENT-2-PROJECT_LOC/Inc</locationURI>
 		</link>
 		<link>
 			<name>Application/Fun</name>
 			<type>2</type>
-			<location>E:/Minotaur2_New/Fun</location>
+			<locationURI>PARENT-2-PROJECT_LOC/Fun</locationURI>
 		</link>
 		<link>
 			<name>Application/TrueSTUDIO</name>
