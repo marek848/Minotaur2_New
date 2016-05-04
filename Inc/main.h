@@ -9,6 +9,7 @@
 #define MAIN_H_
 
 #include "stm32f1xx_hal.h"
+#include "initialization.h"
 /**************************************** Constant and enumerate define *************************************/
 #define ADC_SIZE 6
 #define RX_BUFFER_SIZE 8
@@ -60,9 +61,12 @@ extern DMA_HandleTypeDef hdma_usart3_tx;
 extern DMA_HandleTypeDef hdma_usart3_rx;
 
 /********************************************* Global variables ********************************************/
-extern volatile uint16_t adcData[6];
+volatile uint16_t adcDataOn[6],adcDataOff[6];
 
-extern volatile uint8_t rxBuffer[RX_BUFFER_SIZE];
-extern volatile uint8_t txBuffer[TX_BUFFER_SIZE];
+uint16_t aH,aL;
+
+volatile uint8_t rxBuffer[RX_BUFFER_SIZE];
+volatile uint8_t txBuffer[TX_BUFFER_SIZE];
+
 
 #endif /* MAIN_H_ */

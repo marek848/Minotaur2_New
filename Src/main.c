@@ -34,7 +34,7 @@
 #include "stm32f1xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "main.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -113,7 +113,12 @@ int main(void)
   MX_USART3_UART_Init();
 
   /* USER CODE BEGIN 2 */
-
+	encoderInit();
+	pwmInit();
+//	adcInit();
+	uartInit();
+	timInterruptInit();
+	gyroInit(GYROLOW);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -188,34 +193,34 @@ void MX_ADC1_Init(void)
     */
   sConfig.Channel = ADC_CHANNEL_11;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_41CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_7CYCLES_5;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
-    /**Configure Regular Channel 
+    /**Configure Regular Channel
     */
   sConfig.Channel = ADC_CHANNEL_10;
   sConfig.Rank = 2;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
-    /**Configure Regular Channel 
+    /**Configure Regular Channel
     */
   sConfig.Channel = ADC_CHANNEL_9;
   sConfig.Rank = 3;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
-    /**Configure Regular Channel 
+    /**Configure Regular Channel
     */
   sConfig.Channel = ADC_CHANNEL_6;
   sConfig.Rank = 4;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
-    /**Configure Regular Channel 
+    /**Configure Regular Channel
     */
   sConfig.Channel = ADC_CHANNEL_8;
   sConfig.Rank = 5;
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
-    /**Configure Regular Channel 
+    /**Configure Regular Channel
     */
   sConfig.Channel = ADC_CHANNEL_7;
   sConfig.Rank = 6;
@@ -405,7 +410,7 @@ void MX_TIM4_Init(void)
   htim4.Instance = TIM4;
   htim4.Init.Prescaler = 72-1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 1000-1;
+  htim4.Init.Period = 250-1;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   HAL_TIM_Base_Init(&htim4);
 

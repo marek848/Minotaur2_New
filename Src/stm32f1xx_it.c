@@ -36,7 +36,7 @@
 #include "stm32f1xx_it.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "main.h"
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -120,8 +120,26 @@ void DMA1_Channel3_IRQHandler(void)
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
-
-  /* USER CODE END TIM4_IRQn 0 */
+	static uint8_t count=0;
+	switch (count%4)
+	{
+		case 0:
+				HAL_GPIO_WritePin(Sensor2_GPIO_Port,Sensor2_Pin,1);
+				HAL_GPIO_WritePin(Sensor1_GPIO_Port,Sensor1_Pin,1);
+				break;
+		case 1:
+				HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcDataOn, ADC_SIZE);
+				break;
+		case 2:
+				HAL_GPIO_WritePin(Sensor1_GPIO_Port,Sensor1_Pin,0);
+				HAL_GPIO_WritePin(Sensor2_GPIO_Port,Sensor2_Pin,0);
+				break;
+		case 3:
+				HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcDataOff, ADC_SIZE);
+				break;
+	}
+	count++;
+//  /* USER CODE END TIM4_IRQn 0 */
   HAL_TIM_IRQHandler(&htim4);
   /* USER CODE BEGIN TIM4_IRQn 1 */
 

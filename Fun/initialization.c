@@ -4,7 +4,7 @@
   * Description        : Initialization peripheral function
   ******************************************************************************
  */
-#include "initialization.h"
+#include "main.h"
 
 void encoderInit()
 {
@@ -21,7 +21,7 @@ void  pwmInit()
 void adcInit()
 {
 	HAL_ADCEx_Calibration_Start(&hadc1);
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adcData, ADC_SIZE);
+//	HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adcData, ADC_SIZE);
 }
 
 void uartInit()
