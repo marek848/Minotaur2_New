@@ -9,6 +9,7 @@
 #define INITIALIZATION_H_
 
 #include "main.h"
+#include "lowLewel.h"
 
 void encoderInit();
 
@@ -20,6 +21,6 @@ void uartInit();
 
 void timInterruptInit();
 
-void gyroInit();
+void gyroInit(uint8_t);
 
 #endif /* INITIALIZATION_H_ */

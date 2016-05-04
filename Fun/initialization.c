@@ -28,7 +28,6 @@ void uartInit()
 {
 	HAL_UART_MspInit(&huart3);
 	HAL_UART_Receive_DMA(&huart3,(uint8_t*)rxBuffer,RX_BUFFER_SIZE);
-
 }
 
 void timInterruptInit()
@@ -36,11 +35,23 @@ void timInterruptInit()
 	HAL_TIM_Base_Start_IT(&htim4);
 }
 
-void gyroInit()
+void gyroInit(uint8_t speed)
 {
-	Send_Gyro(0x20,0xDF);//4F
-	Send_Gyro(0x21,0x00);
-	Send_Gyro(0x22,0x00);
-	Send_Gyro(0x23,0x20);// 0x00 - 250dps(8.75 mdps/digit); 0x10 - 500 dps(17.5 mdps/digit); 0x20 - 2000 dps(70 mdps/digit)
-	Send_Gyro(0x24,0x00);
+	sendGyro(0x20,0xDF);//4F
+	sendGyro(0x21,0x00);
+	sendGyro(0x22,0x00);
+	switch(speed)
+	{
+		case 1: /// Low Speed - 250 dps (8.75 mdps/digit)
+			sendGyro(0x23,0x00);
+			break;
+		case 2: /// Medium Speed - 500 dps (17.5 mdps/digit)
+			sendGyro(0x23,0x10);
+			break;
+		case 3: /// High Speed - 2000 dps (70 mdps/digit)
+			sendGyro(0x23,0x20);
+			break;
+	}
+	sendGyro(0x24,0x00);
+
 }
