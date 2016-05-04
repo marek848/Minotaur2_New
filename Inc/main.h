@@ -14,6 +14,31 @@
 #define RX_BUFFER_SIZE 8
 #define TX_BUFFER_SIZE 34
 
+enum direction {
+	LEFT = 0,
+	UP = 1,
+	RIGHT = 2,
+	DOWN = 3,
+};
+enum gyroSpeed {
+	GYROLOW,
+	GYROMEDIUM,
+	GYROHIGH,
+};
+enum sensors {
+	SENLB = 0,
+	SENRB = 1,
+	SENLF = 2,
+	SENRF = 3,
+	SENFL = 4,
+	SENFR = 5,
+};
+enum wheel {
+	LEFTWHEEL,
+	RIGHTWHEEL,
+	FORWARD,
+	BACKWARD,
+};
 
 /****************************************** Peripheral structure ********************************************/
 extern ADC_HandleTypeDef hadc1;
