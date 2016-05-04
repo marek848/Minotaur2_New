@@ -1,0 +1,31 @@
+/*
+ * main.h
+ *
+ *  Created on: Apr 27, 2016
+ *      Author: Marek
+ */
+
+#ifndef MAIN_H_
+#define MAIN_H_
+
+//#include "stm32f1xx_hal.h"
+
+ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
+
+I2C_HandleTypeDef hi2c1;
+
+RTC_HandleTypeDef hrtc;
+
+SPI_HandleTypeDef hspi2;
+
+TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
+
+UART_HandleTypeDef huart3;
+DMA_HandleTypeDef hdma_usart3_tx;
+DMA_HandleTypeDef hdma_usart3_rx;
+
+#endif /* MAIN_H_ */

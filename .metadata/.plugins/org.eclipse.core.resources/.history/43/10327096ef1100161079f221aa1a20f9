@@ -1,0 +1,6 @@
+#include 'main.h'
+void Send_Gyro(uint8_t Register, uint8_t Value)
+{
+	uint8_t ToSend[2]={Register,Value};
+	HAL_I2C_Master_Transmit(&hi2c1,0x6B<<1,ToSend,2,10);
+}

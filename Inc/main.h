@@ -8,6 +8,36 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include "stm32f1xx_hal.h"
+/**************************************** Constant and enumerate define *************************************/
+#define ADC_SIZE 6
+#define RX_BUFFER_SIZE 8
+#define TX_BUFFER_SIZE 34
 
+
+/****************************************** Peripheral structure ********************************************/
+extern ADC_HandleTypeDef hadc1;
+extern DMA_HandleTypeDef hdma_adc1;
+
+extern I2C_HandleTypeDef hi2c1;
+
+extern RTC_HandleTypeDef hrtc;
+
+extern SPI_HandleTypeDef hspi2;
+
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim4;
+
+extern UART_HandleTypeDef huart3;
+extern DMA_HandleTypeDef hdma_usart3_tx;
+extern DMA_HandleTypeDef hdma_usart3_rx;
+
+/********************************************* Global variables ********************************************/
+extern volatile uint16_t adcData[6];
+
+extern volatile uint8_t rxBuffer[RX_BUFFER_SIZE];
+extern volatile uint8_t txBuffer[TX_BUFFER_SIZE];
 
 #endif /* MAIN_H_ */
