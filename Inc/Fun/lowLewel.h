@@ -8,8 +8,15 @@
 #ifndef LOWLEWEL_H_
 #define LOWLEWEL_H_
 
-void sendGyro(uint8_t Register, uint8_t Value);
-void wheelDrive(uint8_t speed, uint8_t, uint8_t);
+#define PWMRIGHT TIM1->CCR2
+#define PWMLEFT TIM1->CCR1
+#define ENCODERRIGHT TIM2->CNT
+#define ENCODERLEFT TIM3->CNT
 
+void sendGyro(uint8_t Register, uint8_t Value);
+
+void wheelDrive(uint8_t, uint8_t, uint8_t);
+
+int32_t readRotationalSpeed(uint8_t);
 
 #endif /* LOWLEWEL_H_ */

@@ -4,6 +4,7 @@
   * Description        : Initialization peripheral function
   ******************************************************************************
  */
+
 #include "main.h"
 
 void encoderInit()
@@ -42,13 +43,13 @@ void gyroInit(uint8_t speed)
 	sendGyro(0x22,0x00);
 	switch(speed)
 	{
-		case 1: /// Low Speed - 250 dps (8.75 mdps/digit)
+		case GYROLOW: /// Low Speed - 250 dps (8.75 mdps/digit)
 			sendGyro(0x23,0x00);
 			break;
-		case 2: /// Medium Speed - 500 dps (17.5 mdps/digit)
+		case GYROMEDIUM: /// Medium Speed - 500 dps (17.5 mdps/digit)
 			sendGyro(0x23,0x10);
 			break;
-		case 3: /// High Speed - 2000 dps (70 mdps/digit)
+		case GYROHIGH: /// High Speed - 2000 dps (70 mdps/digit)
 			sendGyro(0x23,0x20);
 			break;
 	}

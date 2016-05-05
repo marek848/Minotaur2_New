@@ -8,6 +8,11 @@
 #ifndef MOTION_H_
 #define MOTION_H_
 
+void drive(uint16_t);
+
+void rotary(uint16_t);
+
+void rotaryLeft(uint16_t);
 
 
 #endif /* MOTION_H_ */
