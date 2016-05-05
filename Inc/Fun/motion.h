@@ -8,6 +8,8 @@
 #ifndef MOTION_H_
 #define MOTION_H_
 
+#include "main.h"
+
 void drive(uint16_t);
 
 void rotary(uint16_t);

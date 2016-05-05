@@ -15,7 +15,7 @@
 
 void sendGyro(uint8_t Register, uint8_t Value);
 
-void wheelDrive(uint8_t, uint8_t, uint8_t);
+void wheelDrive(uint16_t, uint8_t, uint8_t);
 
 int32_t readRotationalSpeed(uint8_t);
 

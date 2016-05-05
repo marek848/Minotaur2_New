@@ -10,10 +10,16 @@
 
 #include "stm32f1xx_hal.h"
 #include "initialization.h"
+#include "motion.h"
+#include "lowLewel.h"
+
 /**************************************** Constant and enumerate define *************************************/
 #define ADC_SIZE 6
 #define RX_BUFFER_SIZE 8
-#define TX_BUFFER_SIZE 34
+#define TX_BUFFER_SIZE
+#define VEL 400
+#define RVEL 800
+#define DISTANCE 2500
 
 enum direction {
 	LEFT = 0,
@@ -63,7 +69,11 @@ extern DMA_HandleTypeDef hdma_usart3_rx;
 /********************************************* Global variables ********************************************/
 volatile uint16_t adcDataOn[6],adcDataOff[6];
 
-uint16_t aH,aL;
+volatile int32_t angle;
+volatile int32_t scaleGyro;
+volatile int32_t dryfGyro;
+volatile encoder_tmp;
+volatile int32_t distance;
 
 volatile uint8_t rxBuffer[RX_BUFFER_SIZE];
 volatile uint8_t txBuffer[TX_BUFFER_SIZE];

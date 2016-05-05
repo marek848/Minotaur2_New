@@ -45,12 +45,15 @@ void gyroInit(uint8_t speed)
 	{
 		case GYROLOW: /// Low Speed - 250 dps (8.75 mdps/digit)
 			sendGyro(0x23,0x00);
+			scaleGyro=87;
 			break;
 		case GYROMEDIUM: /// Medium Speed - 500 dps (17.5 mdps/digit)
 			sendGyro(0x23,0x10);
+			scaleGyro=175;
 			break;
 		case GYROHIGH: /// High Speed - 2000 dps (70 mdps/digit)
 			sendGyro(0x23,0x20);
+			scaleGyro= 700;
 			break;
 	}
 	sendGyro(0x24,0x00);

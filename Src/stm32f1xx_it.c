@@ -136,6 +136,7 @@ void TIM4_IRQHandler(void)
 				break;
 		case 3:
 				HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcDataOff, ADC_SIZE);
+				integrateGyro();
 				break;
 	}
 	count++;

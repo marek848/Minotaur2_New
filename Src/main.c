@@ -118,7 +118,14 @@ int main(void)
 //	adcInit();
 	uartInit();
 	timInterruptInit();
-	gyroInit(GYROLOW);
+	gyroInit(GYROHIGH);
+	calibrateGyro();
+
+//	rotaryRight(800);
+//	HAL_Delay(500);
+//	rotaryLeft(800);
+	drive(VEL);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
